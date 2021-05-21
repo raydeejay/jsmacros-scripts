@@ -91,14 +91,13 @@ end
 
 chat:toast('Farmer', 'Scanning')
 
-local target_crops = finder.findBlocks(crops, 32)
-chat:toast('Farmer', 'Found ' .. #target_crops .. ' crops')
-
+-- farm reeds first so there's no need to find the sword
 local target_reeds = finder.findBlocks(reeds, 32)
 chat:toast('Farmer', 'Found ' .. #target_reeds .. ' reeds')
-
--- farm reeds first so there's no need to find the sword
 farmReeds(target_reeds)
+
+local target_crops = finder.findBlocks(crops, 32)
+chat:toast('Farmer', 'Found ' .. #target_crops .. ' crops')
 farm(target_crops)
 
 chat:toast('Farmer', 'Finished')
